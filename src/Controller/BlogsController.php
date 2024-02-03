@@ -22,7 +22,7 @@ class BlogsController extends AppController
 
         //$this->loadModel('Articles');
         $articles = $this->Articles->find('all');
-        $this->set(compact('articles'));
+        $this->set('articles', $this->paginate($articles, ['limit' => 3]));
     }
 
 
